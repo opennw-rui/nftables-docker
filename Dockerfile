@@ -16,6 +16,10 @@ RUN mkdir -p /etc/nftables
 # 复制ipset脚本
 COPY ipset.sh /etc/ipset.sh
 
+VOLUME ["/etc/nftables"]
+
+WORKDIR /etc/nftables
+
 # 创建启动脚本
 RUN echo '#!/bin/bash\n\
 # 设置脚本\n\
